@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizador de Referência ABNT</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.8.10/brython.min.js">
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="img/logo.png" >
+    <script type="text/python">
+        from browser import document, html
+
+        def show_values(event):
+            SOBRENOME = document["sobrenome"].value
+            NOME = document["nome"].value
+            ARTIGO = document["artigo"].value
+            REVISTA = document["revista"].value
+            CIDADE = document["cidade"].value
+            VOLUME = document["volume"].value
+            NUM = document["num"].value
+            PAG = document["pag"].value
+            ANO = document["ano"].value
+            document["output"] <= (f"{SOBRENOME}, ").upper() + (f"{NOME}. ").title() + (f"{ARTIGO}. ").capitalize() + (f"{REVISTA}. ").capitalize() + (f"{CIDADE}. ").title() +  (f"v.{VOLUME}. ") +  (f"n.{NUM}. ") +  (f"p.{PAG}. ") +  (f"{ANO} ") + html.BR()
+            
+        
+        document["btn"].bind("click", show_values)
+    </script>
+
+<body onload="brython()">
+
+    <div class="container">
+        <div class="content">
+        <div class="content first-content">
+        
+        <div class="second-column">
+            <h1 class="title" style="text-transform: uppercase">Abnt</h1>
+            <div class="form">
+                <label for="sobrenome"> Digite o último nome do autor: </label>              
+                <input type="text" id="sobrenome" placeholder="Ex: Silva">    
+                <label for="nome"> Digite o nome do autor: </label>        
+                <input type="text" id="nome" placeholder="Ex: Maria Joaquina">
+                <label for="artigo"> Digite o título do artigo: </label>
+                <input type="text" id="artigo" placeholder="Ex: Ciência de dados">
+                <label for="revista"> Digite o nome da revista: </label>
+                <input type="text" id="revista" placeholder="Ex: Revista ciências">
+                <label for="cidade"> Digite a cidade onde a revista está localizada: </label>
+                <input type="text" id="cidade" placeholder="Ex: Barreiras">
+                <label for="volume"> Digite o volume da publicação: </label>
+                <input type="text" id="volume" placeholder="Ex: 3">
+                <label for="artigo"> Digite o número da edição da revista: </label>
+                <input type="text" id="num" placeholder="Ex: 2">
+                <label for="artigo"> Digite as páginas do artigo: </label>
+                <input type="text" id="pag" placeholder="Ex: 12-25">
+                <label for="artigo"> Digite o ano de publicação: </label>
+                <input type="text" id="ano" placeholder="Ex: 2019">
+                <button id="btn">Enviar</button>
+            </div>
+                <div id="ref">
+                    <h2 class="title" style="font-family: 'Barlow', sans-serif; font-size: 20px; font-weight: bold; ">Referência: </h2>
+                    <span id="output" style="font-family: 'Barlow', sans-serif;font-size: 20px;"></span>
+                </div> <!--Coluna um-->
+        </div>  <!-- Coluna dois-->
+    </div><!--First content-->
+</div>
+    </div> <!--Container-->
+
+</body>
+
+</html>
