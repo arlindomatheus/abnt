@@ -1,66 +1,57 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+html {
+  background-color: #000000;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='30' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%23222' stroke-width='10' %3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
+  ;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #9be0f2;
-}
-
-.content {
-  border-radius: 15px;
-  background-color: #fff;
-  box-shadow: #939796;
-  width: 98%;
-  height: 98%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.first-content {
-  display: flex;
-}
-
-label {
-  margin-top: 10px;
-  font-family: "Barlow", sans-serif;
-  font-size: 18px;
+span {
+  color: aliceblue;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 2px;
   font-weight: bold;
 }
 
 input {
-  margin-top: 5px;
-  height: 25px;
-  font-family: "Barlow", sans-serif;
-  font-size: 19px;
-  font-weight: 500;
-  border-radius: 5px;
+  height: 30px;
+}
+
+label {
+  color: aliceblue;
+  font-size: 20px;
+  font-weight: 400;
+  padding: 2px;
+
 }
 
 button {
-  margin-top: 10px;
-  border-radius: 9%;
+  margin-top: 15px;
   width: 100px;
   height: 40px;
-  font-family: "Barlow", sans-serif;
-  font-size: 20px;
-  margin-bottom: 10px;
-  font-weight: 800;
-  background-color: #9be0f2;
 }
 
-.second-column {
-  flex: 2 0 auto;
+.grid-container {
+  display: grid;
+  grid-template-columns: 0.5fr 0.4fr;
+  gap: 1px 1px;
+  grid-template-areas:
+    ". ."
+    "ref Form"
+    ". .";
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }
 
-.form {
+
+.ref {
+  grid-area: ref;
   display: flex;
   flex-direction: column;
-  margin-top: 10px;
+}
+
+.Form {
+  grid-area: Form;
+  display: flex;
+  flex-direction: column;
 }
